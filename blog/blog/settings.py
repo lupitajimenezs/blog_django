@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'categories',
     'django_filters',
+    'posts',
 ]
 
 MIDDLEWARE = [

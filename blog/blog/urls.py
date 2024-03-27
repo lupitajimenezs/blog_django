@@ -22,6 +22,7 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from django.urls import include
 from categories.api.router import router_categories
+from posts.api.router import router_posts
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -42,5 +43,6 @@ urlpatterns = [
     path('redocs/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     # path('swagger<format>/', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('api/', include('users.api.router')),
-    path('api/', include(router_categories.urls))
+    path('api/', include(router_categories.urls)),
+    path('api/', include(router_posts.urls))
 ]

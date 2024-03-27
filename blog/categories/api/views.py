@@ -9,7 +9,7 @@ class CategoryApiViewSet(ModelViewSet):
     serializer_class = CategorySerializer
     #queryset = Category.objects.all()
     queryset = Category.objects.filter(published=True)
-    #Cambiando el paramtro de bisqueda por slug
+    #Cambiando el parametro de busqueda por slug
     lookup_field = 'slug'
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['published']
